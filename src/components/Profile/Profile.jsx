@@ -1,35 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Profile.module.css';
+console.log(styles)
 
-const Profile=({name, tag, location, avatar, stats:{followers, views, likes }})=> 
 
-      (<div className="profile">
-  <div className="description">
+const Profile=({name, tag, location, avatar, stats})=> 
+
+      (<div className={styles.profile}>
+  <div className={styles.description}>
     <img
       src={avatar}
       alt="Аватар пользователя"
-      className="avatar"
+      className={styles.avatar}
     />
-    <p className="name">{name}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
+    <p className={styles.name}>{name}</p>
+    <p className={styles.tag}>@{tag}</p>
+    <p className={styles.location}>{location}</p>
+    <ul className={styles.stats}>
+    {Object.keys(stats)
+    .map((key)=>(        
+    <li key={key} className={styles.stats_item}>
+      <span className={styles.stats_item_label}>{key}</span>
+      <span className={styles.stats_item_data}>
+      {key==="followers"&&stats[key]===0?'No followers':stats[key]}
+      </span>
+    </li>))}
+    </ul>
+   
   </div>
-
-  <ul className="stats">
-    <li>
-      <span className="label">Followers: </span>
-      {followers===0?(<span>user has no followers, you can be the first</span>):
-      <span className="quantity">{followers}</span>}
-    </li>
-    <li>
-      <span className="label">Views</span>
-      <span className="quantity">{views}</span>
-    </li>
-    <li>
-      <span className="label">Likes</span>
-      <span className="quantity">{likes}</span>
-    </li>
-  </ul>
 </div>)
 
 Profile.propTypes={

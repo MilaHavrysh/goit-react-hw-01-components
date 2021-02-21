@@ -1,0 +1,76 @@
+@value profile-primery-color from '../../vars.module.css';
+.profile {
+  display: block;
+  padding: 20px;
+  background-color: #f5f5dc;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border: 1px solid profile-primery-color;
+  border-radius: 100%;
+  background-color: #ffffff;
+}
+
+.description {
+  width: 400px;
+  height: 500px;
+  padding-top: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  margin: auto;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border: 1px solid profile-primery-color;
+  border-radius: 4px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+
+.stats_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+.stats_item:not(:first-child) {
+  border-left: 1px solid profile-primery-color;
+}
+
+.stats_item_label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: profile-primery-color;
+  text-transform: capitalize;
+}
+
+.stats_item_data {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+}
+.tag {
+  font-size: 18px;
+  font-weight: 500;
+  color: profile-primery-color;
+}
+
+.location {
+  font-size: 20px;
+  font-weight: 500;
+  color: profile-primery-color;
+}
